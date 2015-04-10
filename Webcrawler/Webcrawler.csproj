@@ -44,7 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crawler\Scrapper.cs" />
+    <Compile Include="Gathers\Gather.cs" />
+    <Compile Include="Observer\Observer.cs" />
+    <Compile Include="Observer\Subject.cs" />
+    <Compile Include="Scrapper\ScrapableItems\PhoneNumber.cs" />
+    <Compile Include="Scrapper\ScrapableItems\Scrapable.cs" />
+    <Compile Include="Scrapper\ScrapBehavior\PhoneScrapper.cs" />
+    <Compile Include="Scrapper\ScrapBehavior\ScrapBehavior.cs" />
+    <Compile Include="Scrapper\Scrapper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
