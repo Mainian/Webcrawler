@@ -7,9 +7,9 @@ using System.Text.RegularExpressions;
 
 namespace Webcrawler.Scrapper.ScrapBehavior
 {
-    public interface ScrapBehavior<T>
+    public interface ScrapBehavior
     {
-        List<T> Scrap(string text);
-        Regex ScrapExpression();
+        List<Object> Scrap(string text);
+        List<Regex> ScrapExpressions();
     }
 }

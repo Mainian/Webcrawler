@@ -8,11 +8,11 @@ using System.Text.RegularExpressions;
 
 namespace Webcrawler.Scrapper.ScrapBehavior
 {
-    public class HtmlLinkScrapper : ScrapBehavior<HTMLLink>
+    public class HtmlLinkScrapper : ScrapBehavior
     {
-        List<HTMLLink> Scrap(string text)
+        List<Object> Scrap(string text)
         {
-            List<HTMLLink> htmlLinks = new List<HTMLLink>();
+            List<Object> htmlLinks = new List<Object>();
 
             List<Regex> expressions = ScrapExpressions();
 

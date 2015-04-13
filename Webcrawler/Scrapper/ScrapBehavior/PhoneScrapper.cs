@@ -8,11 +8,11 @@ using System.Text.RegularExpressions;
 
 namespace Webcrawler.Scrapper.ScrapBehavior
 {
-    public  class PhoneScrap : ScrapBehavior<PhoneNumber>
+    public  class PhoneScrap : ScrapBehavior
     {
-        List<PhoneNumber> Scrap(string text)
+        List<Object> Scrap(string text)
         {
-            List<PhoneNumber> phoneNumebrs = new List<PhoneNumber>();
+            List<Object> phoneNumebrs = new List<Object>();
 
             //Regex myRegex = ScrapExpression();
             foreach (Regex myRegex in ScrapExpressions())
