@@ -8,9 +8,9 @@ using System.Text.RegularExpressions;
 
 namespace Webcrawler.Scrapper.ScrapBehavior
 {
-    public class HtmlLinkScrapper : ScrapBehavior
+    public class HtmlLinkScraper : ScrapBehavior
     {
-        List<Object> Scrap(string text)
+        public List<Object> Scrap(string text)
         {
             List<Object> htmlLinks = new List<Object>();
 
@@ -37,7 +37,7 @@ namespace Webcrawler.Scrapper.ScrapBehavior
             return htmlLinks;
         }
 
-        List<Regex> ScrapExpressions()
+        public List<Regex> ScrapExpressions()
         {
             List<Regex> ScrapExpressions = new List<Regex>();
             ScrapExpressions.Add(new Regex(@"(<a.*?>.*?</a>)"));
@@ -45,6 +45,16 @@ namespace Webcrawler.Scrapper.ScrapBehavior
             ScrapExpressions.Add(new Regex(@"\s*<.*?>\s*"));
 
             return ScrapExpressions;
+        }
+
+        public string PrettyName()
+        {
+            return "HTML Scrapper";
+        }
+
+        public override string ToString()
+        {
+            return PrettyName();
         }
     }
 }

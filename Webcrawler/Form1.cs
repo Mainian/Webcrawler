@@ -15,10 +15,22 @@ namespace Webcrawler
     {
         public ScrapBehavior ScrapBehavior { get; set; }
         private List<Object> ScrapValues { get; set; }
+        ScrapBehavior phoneScraper = new PhoneScraper();
+        ScrapBehavior htmlLinkScraper = new HtmlLinkScraper();
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox_ScrapBehavior.Items.Add(phoneScraper);
+            comboBox_ScrapBehavior.Items.Add(htmlLinkScraper);
+
+            comboBox_ScrapStyle.Items.Add("Sync");
+            comboBox_ScrapStyle.Items.Add("Async");
+            comboBox_ScrapStyle.Items.Add("Async Web Socket");
         }
 
         private async void callCrawlerAsync(string url)
@@ -33,6 +45,9 @@ namespace Webcrawler
             Gathers.Gather gather = new Gathers.Gather(ScrapBehavior, url);
             List<Object> values = new List<Object>();
             values = gather.PerformScrap();
+
+            foreach(Scrapper.ScrapableItems.PhoneNumber str in values)
+                Console.Out.WriteLine(str.Number);
         }
 
         private async void CallCrawlerAsyncWebClient(string url)
@@ -57,5 +72,29 @@ namespace Webcrawler
         private void ChainHTMLOnPhoneGather()
         {
         }
+
+        private void button_Scrap_Click(object sender, EventArgs e)
+        {
+            if (comboBox_ScrapStyle.Text == "" || comboBox_ScrapBehavior.Text == "" || textBox_URL.Text == "" || textBox_OutputLocation.Text == "")
+                return;
+
+            ScrapBehavior = (ScrapBehavior)comboBox_ScrapBehavior.SelectedItem;
+
+            switch (comboBox_ScrapStyle.Text)
+            {
+                case "Sync":
+                    callCrawlerSync(textBox_URL.Text.ToString());
+                    break;
+                case "Async": 
+                    callCrawlerAsync(textBox_URL.Text.ToString());
+                    break;
+                case "Async Web Socket":
+                    CallCrawlerAsyncWebClient(textBox_URL.Text.ToString());
+                    break;
+                default: return;
+            }
+        }
+
+
     }
 }

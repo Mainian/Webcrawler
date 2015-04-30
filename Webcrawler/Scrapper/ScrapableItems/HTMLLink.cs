@@ -13,7 +13,7 @@ namespace Webcrawler.Scrapper.ScrapableItems
         
         public override string ToString()
         {
-            return Text;
+            return "Html Link";
         }
 
         public string GetFullText()

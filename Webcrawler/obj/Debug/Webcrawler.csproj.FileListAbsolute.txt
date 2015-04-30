@@ -6,3 +6,4 @@ C:\Users\Kyle\Documents\Visual Studio 2012\Projects\Webcrawler\Webcrawler\obj\De
 C:\Users\Kyle\Documents\Visual Studio 2012\Projects\Webcrawler\Webcrawler\obj\Debug\Webcrawler.csproj.GenerateResource.Cache
 C:\Users\Kyle\Documents\Visual Studio 2012\Projects\Webcrawler\Webcrawler\obj\Debug\Webcrawler.exe
 C:\Users\Kyle\Documents\Visual Studio 2012\Projects\Webcrawler\Webcrawler\obj\Debug\Webcrawler.pdb
+C:\Users\Kyle\Documents\Visual Studio 2012\Projects\Webcrawler\Webcrawler\obj\Debug\Webcrawler.Form1.resources

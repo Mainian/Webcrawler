@@ -20,17 +20,17 @@ namespace Webcrawler.Gathers
 
         public async Task<List<Object>> PerformScrapAsync()
         {
-            return scrapBehavior.Scrap(await Scrapper.Scrapper.GetWebsiteSourceCodeAsync(url));
+            return scrapBehavior.Scrap(await Scrapper.Scraper.GetWebsiteSourceCodeAsync(url));
         }
 
         public List<Object> PerformScrap()
         {
-            return scrapBehavior.Scrap(Scrapper.Scrapper.GetWebsiteSourceCodeSync(url));
+            return scrapBehavior.Scrap(Scrapper.Scraper.GetWebsiteSourceCodeSync(url));
         }
 
         public async Task<List<Object>> PerformScrapAsyncWebClient()
         {
-            return scrapBehavior.Scrap(await Scrapper.Scrapper.GetWebsiteSourceCodeWebClient(url));
+            return scrapBehavior.Scrap(await Scrapper.Scraper.GetWebsiteSourceCodeWebClient(url));
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Net;
 
 namespace Webcrawler.Scrapper
 {
-    public class Scrapper
+    public class Scraper
     {
         public static async Task<string> GetWebsiteSourceCodeAsync(string url)
         {

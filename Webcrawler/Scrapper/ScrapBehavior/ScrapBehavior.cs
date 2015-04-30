@@ -11,5 +11,6 @@ namespace Webcrawler.Scrapper.ScrapBehavior
     {
         List<Object> Scrap(string text);
         List<Regex> ScrapExpressions();
+        string PrettyName();
     }
 }

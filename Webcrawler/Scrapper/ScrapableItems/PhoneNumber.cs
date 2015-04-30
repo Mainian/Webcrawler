@@ -9,5 +9,10 @@ namespace Webcrawler.Scrapper.ScrapableItems
     public class PhoneNumber : Scrapable
     {
         public string Number { get; set; }
+
+        public override string ToString()
+        {
+            return "Phone Number";
+        }
     }
 }
